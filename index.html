@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Al Rafsan — Data Analyst → AI Security</title>
+<meta name="description" content="Portfolio of Ahmed Al Rafsan, a Melbourne-based Data Analyst pivoting into AI Security. Projects, writing, and the story behind an unconventional path into tech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1116;
+    --ink-2:#151a22;
+    --ink-3:#1f2530;
+    --paper:#eae5da;
+    --paper-dim:#9c968a;
+    --paper-faint:#5f6169;
+    --signal:#cf9f3f;
+    --signal-dim:rgba(207,159,63,0.14);
+    --thread:#6f8fa3;
+    --ok:#7c9d76;
+    --muted:#565f6b;
+    --radius:12px;
+    --maxw:1080px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    line-height:1.6;
+    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size:24px 24px;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;margin:0;color:var(--paper);}
+  p{margin:0;}
+  a{color:var(--thread);text-decoration:none;}
+  a:hover{color:var(--signal);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(14,17,22,0.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--ink-3);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--paper);letter-spacing:0.02em;}
+  .logo:hover{color:var(--paper);}
+  .logo-dot{color:var(--signal);}
+  .nav-links{display:flex;gap:28px;}
+  .nav-link{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--paper-dim);padding:6px 0;border-bottom:2px solid transparent;}
+  .nav-link:hover{color:var(--paper);}
+  .nav-link.active{color:var(--signal);border-bottom-color:var(--signal);}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+  .menu-toggle span{width:22px;height:2px;background:var(--paper);display:block;transition:transform .2s ease,opacity .2s ease;}
+
+  /* SECTIONS */
+  .section{display:none;padding:64px 0 96px;animation:fadeIn .25s ease;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--signal);margin-bottom:14px;display:block;}
+
+  /* HERO */
+  .hero{padding-top:24px;padding-bottom:56px;}
+  .query-block{
+    background:var(--ink-2);
+    border:1px solid var(--ink-3);
+    border-left:3px solid var(--signal);
+    border-radius:8px;
+    padding:20px 24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;
+    line-height:1.7;
+    color:var(--paper-dim);
+    max-width:480px;
+    margin:0 0 32px;
+    white-space:pre;
+    overflow-x:auto;
+  }
+  .query-block .kw{color:var(--thread);}
+  .query-block .out{color:var(--signal);}
+  h1.hero-h1{font-size:2.6rem;line-height:1.15;max-width:720px;margin-bottom:22px;}
+  .hero-body{color:var(--paper-dim);max-width:620px;font-size:1.02rem;margin-bottom:24px;}
+  .status-pill{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--paper-dim);
+    border:1px solid var(--ink-3);
+    border-radius:999px;
+    padding:8px 16px;
+    margin-bottom:32px;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+  .btn{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:0.92rem;padding:12px 22px;border-radius:8px;border:1px solid transparent;transition:transform .15s ease,border-color .15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--signal);color:var(--ink);}
+  .btn-primary:hover{background:var(--signal);opacity:0.92;color:var(--ink);}
+  .btn-ghost{background:transparent;color:var(--paper);border-color:var(--ink-3);}
+  .btn-ghost:hover{border-color:var(--thread);color:var(--paper);}
+
+  .featured-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:8px;}
+  .see-all{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;}
+  .featured-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+
+  /* CARDS */
+  .card{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:24px;transition:transform .15s ease,border-color .15s ease;}
+  .card:hover{transform:translateY(-3px);border-color:var(--thread);}
+  .card h3{font-size:1.15rem;margin-bottom:10px;}
+  .card p{color:var(--paper-dim);font-size:0.94rem;margin-bottom:16px;}
+  .card-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .badge{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.03em;padding:4px 10px;border-radius:999px;text-transform:uppercase;}
+  .badge-gold{background:var(--signal-dim);color:var(--signal);}
+  .badge-tag{background:var(--ink-3);color:var(--paper-dim);}
+  .badge-ok{background:rgba(124,157,118,0.15);color:var(--ok);}
+  .badge-muted{background:rgba(86,95,107,0.2);color:var(--muted);}
+  .card-links{display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;}
+  .card-index{font-family:'IBM Plex Mono',monospace;color:var(--paper-faint);font-size:0.78rem;margin-bottom:8px;display:block;}
+
+  /* PROJECTS GRID */
+  .section-head{max-width:640px;margin-bottom:40px;}
+  .section-head h2{font-size:2rem;margin-bottom:12px;}
+  .section-head p{color:var(--paper-dim);}
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px;}
+  .sub-head{font-family:'IBM Plex Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--paper-dim);margin-bottom:18px;}
+  .sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .sim-card{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:18px;}
+  .sim-card h4{font-family:'IBM Plex Sans',sans-serif;font-size:0.98rem;margin-bottom:6px;color:var(--paper);}
+  .sim-card p{color:var(--paper-dim);font-size:0.86rem;margin-bottom:10px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;margin-bottom:48px;}
+  .photo-placeholder{
+    aspect-ratio:1/1;
+    border:1.5px dashed var(--ink-3);
+    border-radius:var(--radius);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color:var(--paper-faint);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    text-align:center;
+    padding:16px;
+  }
+  .about-copy p{color:var(--paper-dim);margin-bottom:16px;max-width:640px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 48px;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;background:var(--ink-2);border:1px solid var(--ink-3);color:var(--paper-dim);padding:6px 12px;border-radius:999px;}
+  .roadmap{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+  .road-step{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:16px 20px;flex:1;min-width:160px;}
+  .road-step.now{border-color:var(--signal);}
+  .road-step .label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--paper-faint);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:4px;}
+  .road-step .name{font-weight:600;}
+  .road-arrow{color:var(--paper-faint);padding:0 14px;font-family:'IBM Plex Mono',monospace;}
+
+  /* LIFESTYLE */
+  .lifestyle-intro{max-width:600px;margin-bottom:48px;color:var(--paper-dim);}
+  .life-block{display:grid;grid-template-columns:1fr 260px;gap:36px;align-items:start;margin-bottom:56px;}
+  .life-block:nth-child(odd){}
+  .life-block h3{font-size:1.4rem;margin-bottom:14px;}
+  .life-block p{color:var(--paper-dim);margin-bottom:12px;max-width:520px;}
+  .life-photo{aspect-ratio:4/3;border:1.5px dashed var(--ink-3);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--paper-faint);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;text-align:center;padding:16px;}
+  .life-close{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:var(--paper);max-width:520px;margin-top:8px;}
+
+  /* BLOG */
+  .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px;}
+  .blog-empty{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--paper-faint);border-top:1px solid var(--ink-3);padding-top:20px;margin-top:8px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;margin-top:32px;}
+  .contact-card{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:22px;text-align:left;}
+  .contact-card .k{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--paper-faint);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:8px;}
+  .contact-card .v{font-weight:600;color:var(--paper);}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--ink-3);padding:32px 0;}
+  .footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-inner p{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--paper-faint);}
+  .footer-links{display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;}
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .photo-placeholder{max-width:200px;}
+    .life-block{grid-template-columns:1fr;}
+    .life-photo{max-width:280px;}
+    .featured-grid,.projects-grid,.sim-grid,.blog-grid,.contact-grid{grid-template-columns:repeat(1,1fr);}
+  }
+  @media (max-width:768px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--ink-2);
+      border-bottom:1px solid var(--ink-3);
+      flex-direction:column;
+      padding:12px 24px 20px;
+      gap:16px;
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:flex;}
+    .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .menu-toggle.open span:nth-child(2){opacity:0;}
+    .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    h1.hero-h1{font-size:1.9rem;}
+    .roadmap{flex-direction:column;}
+    .road-arrow{transform:rotate(90deg);padding:6px 0;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo tab-trigger" data-tab="home">Ahmed Al Rafsan<span class="logo-dot">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#" class="nav-link tab-trigger" data-tab="home">Home</a>
+      <a href="#" class="nav-link tab-trigger" data-tab="projects">Projects</a>
+      <a href="#" class="nav-link tab-trigger" data-tab="about">About</a>
+      <a href="#" class="nav-link tab-trigger" data-tab="lifestyle">Lifestyle</a>
+      <a href="#" class="nav-link tab-trigger" data-tab="blog">Blog</a>
+      <a href="#" class="nav-link tab-trigger" data-tab="contact">Contact</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- HOME -->
+  <section id="home" class="section active">
+    <div class="hero">
+      <span class="eyebrow">Melbourne, Australia · Data Analyst</span>
+      <div class="query-block">SELECT next_role
+FROM   career_path
+WHERE  background != <span class="kw">'traditional'</span>
+AND    curiosity   = <span class="kw">TRUE</span>;
+
+<span class="out">-- 1 row returned
+-- Ahmed Al Rafsan · Data Analyst → AI Security</span></div>
+      <h1 class="hero-h1">I don't just build dashboards. I find the story the numbers are hiding.</h1>
+      <p class="hero-body">My path here wasn't a straight line — Aeronautical Engineering, an MBA in Human Resource Management, and a Master's in Business Analytics. That mix is why I think like an engineer, read people like an HR analyst, and speak the language business actually uses, all through data. Now I'm building toward AI Security, because the next decade of data problems will be security problems.</p>
+      <span class="status-pill mono">Master's in Business Analytics · Security+ in progress · Graduating July 2026</span>
+      <div class="cta-row">
+        <button class="btn btn-primary tab-trigger" data-tab="projects">View my projects</button>
+        <button class="btn btn-ghost tab-trigger" data-tab="contact">Get in touch</button>
+      </div>
+    </div>
+
+    <div class="featured-head">
+      <h2>Featured work</h2>
+      <a href="#" class="see-all tab-trigger" data-tab="projects">See all projects →</a>
+    </div>
+    <div class="featured-grid">
+      <article class="card">
+        <div class="card-top"><span class="badge badge-gold">Featured</span><span class="badge badge-tag">Python · SQL · Power BI</span></div>
+        <h3>Fashion Retail Intelligence</h3>
+        <p>Investigated why a clothing retailer's revenue dropped 89% — uncovering customer retention failures and product concentration risk.</p>
+        <div class="card-links">
+          <a href="https://github.com/Ahmed-Al-Rafsan/Fashion-Retail-Intelligence" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://youtu.be/Y8TWx8vikOE" target="_blank" rel="noopener">Video ↗</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="badge badge-gold">Featured</span><span class="badge badge-tag">Python · MySQL · Power BI</span></div>
+        <h3>Customer Segmentation & RFM Analysis</h3>
+        <p>Identified £41M in revenue at risk across 5,878 customers using RFM scoring, cohort retention, and CLV modelling.</p>
+        <div class="card-links">
+          <a href="https://github.com/Ahmed-Al-Rafsan/Customer-Segmentation-RFM-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://youtu.be/27dancSDNOo" target="_blank" rel="noopener">Video ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <span class="eyebrow">Projects</span>
+    <div class="section-head">
+      <h2>Six projects, one progression.</h2>
+      <p>Each one builds on the last — from first exploration to techniques I'd use on the job.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="card">
+        <span class="card-index">P1</span>
+        <div class="card-top"><span class="badge badge-ok">Complete</span><span class="badge badge-tag">Python · Power BI</span></div>
+        <h3>Melbourne CBD Business Establishments</h3>
+        <p>Explored two decades of Melbourne business data from the Victorian Government — foundational exploration and visualisation.</p>
+        <div class="card-links"><a href="https://github.com/Ahmed-Al-Rafsan/melbourne-cbd-business-analysis" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <article class="card">
+        <span class="card-index">P2</span>
+        <div class="card-top"><span class="badge badge-gold">Featured</span><span class="badge badge-tag">Python · SQL · Power BI</span></div>
+        <h3>Fashion Retail Intelligence</h3>
+        <p>Investigated an 89% revenue drop at a clothing retailer. Found critical customer retention failures and product concentration risk.</p>
+        <div class="card-links">
+          <a href="https://github.com/Ahmed-Al-Rafsan/Fashion-Retail-Intelligence" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://youtu.be/Y8TWx8vikOE" target="_blank" rel="noopener">Video ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-index">P3</span>
+        <div class="card-top"><span class="badge badge-gold">Featured</span><span class="badge badge-tag">Python · MySQL · Power BI</span></div>
+        <h3>Customer Segmentation & RFM Analysis</h3>
+        <p>Identified £41M in revenue at risk across 5,878 customers using RFM scoring, cohort retention, and Customer Lifetime Value modelling.</p>
+        <div class="card-links">
+          <a href="https://github.com/Ahmed-Al-Rafsan/Customer-Segmentation-RFM-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://youtu.be/27dancSDNOo" target="_blank" rel="noopener">Video ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-index">P4</span>
+        <div class="card-top"><span class="badge badge-muted">Planned</span><span class="badge badge-tag">Python · SQL · Power BI</span></div>
+        <h3>Melbourne Road Safety Analysis</h3>
+        <p>Correlation analysis and geographic insight into road safety trends using Victorian Government data.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-index">P5</span>
+        <div class="card-top"><span class="badge badge-muted">Planned</span><span class="badge badge-tag">Python · SQL · Tableau</span></div>
+        <h3>Sales Dashboard</h3>
+        <p>Building fluency in Tableau — calculated fields, dashboard actions, interactive filtering.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-index">P6</span>
+        <div class="card-top"><span class="badge badge-muted">Planned</span><span class="badge badge-tag">Excel · Power Query</span></div>
+        <h3>Financial Analysis</h3>
+        <p>Advanced Excel workflows — pivot tables, XLOOKUP, financial modelling, Power Query automation.</p>
+      </article>
+    </div>
+
+    <span class="sub-head">Industry simulations</span>
+    <div class="sim-grid">
+      <div class="sim-card">
+        <h4>Quantium</h4>
+        <p>Data Analytics Job Simulation — customer segmentation and category insights with Python and pandas.</p>
+        <span class="badge badge-ok">In progress</span>
+      </div>
+      <div class="sim-card">
+        <h4>KPMG</h4>
+        <p>Data Analytics Consulting — data quality assessment and Power BI dashboarding in a Big 4 context.</p>
+        <span class="badge badge-muted">Planned</span>
+      </div>
+      <div class="sim-card">
+        <h4>BCG</h4>
+        <p>Data Science & Analytics — churn prediction and executive-level presentation.</p>
+        <span class="badge badge-muted">Planned</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <span class="eyebrow">About</span>
+    <div class="section-head">
+      <h2>Three backgrounds, one thread.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="photo-placeholder">📷<span>Add your photo here</span></div>
+      <div class="about-copy">
+        <p>I didn't arrive at data through a straight computer-science line. I studied Aeronautical Engineering, then did an MBA focused on Human Resource Management, then went back for a Master's in Business Analytics. Each one taught me something the others didn't — how to think in systems, how to read people, and how to turn both into a decision a business will actually act on.</p>
+        <p>Today I work as a Data Analyst in Melbourne. Most of my week is spent doing the unglamorous part of the job well: cleaning messy data, asking the right question of it, and building the dashboard or model that turns "here's some numbers" into "here's what we should do."</p>
+        <p>I'm now building toward AI Security. As companies put more of their operations behind AI systems, the ones who understand both the data layer and the security layer will be the ones worth hiring. I'm working through a Security+ certification alongside my current projects, graduating this July, with sights set on contributing to a team at a company operating at serious scale.</p>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span>
+      <span class="tag">Tableau</span><span class="tag">DAX</span><span class="tag">pandas</span>
+      <span class="tag">MySQL</span><span class="tag">Excel</span><span class="tag">Git</span>
+      <span class="tag">GitHub</span><span class="tag">Power Query</span>
+    </div>
+
+    <span class="sub-head">Roadmap</span>
+    <div class="roadmap">
+      <div class="road-step now"><span class="label">Now</span><span class="name">Data Analyst</span></div>
+      <span class="road-arrow">→</span>
+      <div class="road-step"><span class="label">Building</span><span class="name">Data / AI Engineering</span></div>
+      <span class="road-arrow">→</span>
+      <div class="road-step"><span class="label">Target</span><span class="name">AI Security</span></div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle" class="section">
+    <span class="eyebrow">Lifestyle</span>
+    <div class="section-head">
+      <h2>The parts that don't show up in a repo.</h2>
+      <p class="lifestyle-intro">None of this is technical. All of it is why I approach technical work the way I do.</p>
+    </div>
+
+    <div class="life-block">
+      <div>
+        <h3>The setup</h3>
+        <p>I built my workspace on a student budget, not a company card — a standing desk, a walking pad, a proper keyboard and mouse, added piece by piece as I could afford them. It's not expensive. It's deliberate.</p>
+        <p>Resourcefulness is easy to claim on a resume and hard to demonstrate. This is how I demonstrate it.</p>
+      </div>
+      <div class="life-photo">📷<span>Add a photo of your setup here</span></div>
+    </div>
+
+    <div class="life-block">
+      <div>
+        <h3>The discipline</h3>
+        <p>I train three to four times a week. It has nothing to do with data analysis and everything to do with how I show up to it — the same consistency that gets me through a 6am gym session is what gets a messy dataset into a finished dashboard.</p>
+      </div>
+      <div class="life-photo">📷<span>Add a training photo here</span></div>
+    </div>
+
+    <p class="life-close">Neither of these is on my resume. Both are part of how I show up to solve problems.</p>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="section">
+    <span class="eyebrow">Blog</span>
+    <div class="section-head">
+      <h2>Writing, monthly.</h2>
+      <p>I write about what I'm learning — SQL, security, and the messy parts of switching careers most people skip.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="card">
+        <span class="badge badge-muted">Coming soon</span>
+        <h3 style="margin-top:12px;">What RFM Analysis Taught Me About Customer Retention</h3>
+        <p>A breakdown of the thinking behind Project 3, written for someone outside data to follow.</p>
+      </article>
+      <article class="card">
+        <span class="badge badge-muted">Coming soon</span>
+        <h3 style="margin-top:12px;">Why I'm Betting on AI Security</h3>
+        <p>The case for the pivot — and what I'm doing about it before I'm hired to do it.</p>
+      </article>
+    </div>
+    <p class="blog-empty">First post goes here. Aim for one a month.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <span class="eyebrow">Contact</span>
+    <div class="section-head">
+      <h2>Let's talk.</h2>
+      <p>Open to data, analytics engineering, and AI security roles — Melbourne or remote.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:ahmed.rafsan108@gmail.com">
+        <span class="k">Email</span>
+        <span class="v">ahmed.rafsan108@gmail.com</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/ahmed-al-rafsan-" target="_blank" rel="noopener">
+        <span class="k">LinkedIn</span>
+        <span class="v">Connect →</span>
+      </a>
+      <a class="contact-card" href="https://www.youtube.com/@AhmedAlRafsan" target="_blank" rel="noopener">
+        <span class="k">YouTube</span>
+        <span class="v">Watch →</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="mono">Ahmed Al Rafsan · Melbourne, Australia · © 2026</p>
+    <div class="footer-links">
+      <a href="mailto:ahmed.rafsan108@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ahmed-al-rafsan-" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/@AhmedAlRafsan" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const triggers = document.querySelectorAll('.tab-trigger');
+  const sections = document.querySelectorAll('.section');
+  const navLinkEls = document.querySelectorAll('.nav-link');
+  const navLinks = document.getElementById('navLinks');
+  const menuToggle = document.getElementById('menuToggle');
+
+  function showTab(tab){
+    sections.forEach(s => s.classList.toggle('active', s.id === tab));
+    navLinkEls.forEach(l => l.classList.toggle('active', l.dataset.tab === tab));
+    window.scrollTo({top:0, behavior:'smooth'});
+    navLinks.classList.remove('open');
+    menuToggle.classList.remove('open');
+  }
+
+  triggers.forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      showTab(el.dataset.tab);
+    });
+  });
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+  });
+
+  showTab('home');
+</script>
+
+</body>
+</html>
