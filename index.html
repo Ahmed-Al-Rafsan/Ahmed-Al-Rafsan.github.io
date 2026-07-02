@@ -105,6 +105,10 @@
 
   .hero-photo{position:relative;}
   .hero-photo img{
+    width:100%;
+    aspect-ratio:4/4.5;
+    object-fit:cover;
+    object-position:center 22%;
     border-radius:var(--radius);
     border:1px solid var(--ink-3);
     box-shadow:0 24px 60px -24px rgba(0,0,0,0.7);
@@ -239,7 +243,7 @@
 
   /* ============ ABOUT ============ */
   .about-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;}
-  .about-photo img{border-radius:var(--radius);border:1px solid var(--ink-3);}
+  .about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;border-radius:var(--radius);border:1px solid var(--ink-3);}
   .about-photo{position:sticky;top:96px;}
   .chapter{margin-bottom:38px;}
   .chapter .ch-label{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;color:var(--signal);display:block;margin-bottom:10px;}
@@ -261,7 +265,7 @@
   .life-block h3{font-size:1.45rem;margin-bottom:14px;}
   .life-block p{color:var(--paper-dim);margin-bottom:14px;max-width:560px;}
   .life-photos{display:flex;flex-direction:column;gap:14px;}
-  .life-photos img{border-radius:var(--radius);border:1px solid var(--ink-3);}
+  .life-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 32%;border-radius:var(--radius);border:1px solid var(--ink-3);}
   .life-full{max-width:720px;margin-bottom:60px;}
   .life-full h3{font-size:1.45rem;margin-bottom:14px;}
   .life-full p{color:var(--paper-dim);margin-bottom:14px;}
@@ -373,7 +377,7 @@
       <div>
         <div class="type-line"><span id="typeTarget"></span><span class="cursor">|</span></div>
         <h1 class="hero-h1">I don't just build dashboards. I find the story the numbers are <em>hiding</em>.</h1>
-        <p class="hero-body">My path here wasn't a straight line — aeronautical engineering, an MBA in Human Resource Management, then a Master's in Business Analytics. That mix is why I think like an engineer, read a room like an HR analyst, and put both to work in SQL, Power BI, and Python.</p>
+        <p class="hero-body">My path here wasn't a straight line — aeronautical engineering, an MBA in Human Resource Management, then a Master of Business Information Systems in Data Analytics. That mix is why I think like an engineer, read a room like an HR analyst, and put both to work in SQL, Power BI, and Python.</p>
         <span class="status-pill"><span class="dot">●</span>&nbsp; Master of Business Information Systems (Data Analytics) — completing 2026 &nbsp;·&nbsp; PL-300 &amp; DP-900 in progress &nbsp;·&nbsp; Melbourne</span>
         <div class="cta-row">
           <a href="#projects" class="btn btn-primary tab-trigger" data-tab="projects">View my projects</a>
@@ -623,7 +627,7 @@
         <div class="chapter reveal">
           <span class="ch-label">PAST — THE HR YEARS</span>
           <h3>KPI reporting for 500+ people, answering to the CEO</h3>
-          <p>Before Australia, I was an HR Executive in Organisational Development at Kazi Farms Group, one of Bangladesh's largest food companies (Sep 2022 – Feb 2024). I owned the enterprise performance-evaluation cycle for a workforce of 500+ — collecting, validating, and analysing the KPI data that fed directly into increment and promotion decisions.</p>
+          <p>Before Australia, I was an HR Executive in Organisational Development at Kazi Farms Group, one of Bangladesh's largest food companies (Sep 2022 – Feb 2024). I owned the enterprise performance-evaluation cycle for a workforce of 500+ — collecting, validating, and analysing the KPI data almost entirely in Excel, with pivot tables and Power Query as my daily tools, feeding directly into increment and promotion decisions.</p>
           <p>I sat with the CEO and general managers to define and challenge the KPIs on senior leadership scorecards, flagged the unmeasurable ones, and built the monthly executive reports leadership actually used. I learned to translate a number into a decision years before I wrote my first line of SQL.</p>
         </div>
         <div class="chapter reveal">
