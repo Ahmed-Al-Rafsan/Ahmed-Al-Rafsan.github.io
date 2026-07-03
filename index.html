@@ -79,7 +79,7 @@
   .reveal.in{opacity:1;transform:none;}
 
   /* ============ HERO ============ */
-  .hero{display:grid;grid-template-columns:1.25fr 0.75fr;gap:52px;align-items:center;padding-top:20px;margin-bottom:60px;}
+  .hero{display:grid;grid-template-columns:1.35fr 0.65fr;gap:48px;align-items:center;padding-top:20px;margin-bottom:60px;}
   .type-line{
     font-family:'IBM Plex Mono',monospace;font-size:0.92rem;color:var(--signal);
     min-height:1.5em;margin-bottom:18px;letter-spacing:0.02em;
@@ -103,12 +103,12 @@
   .btn-ghost{background:transparent;color:var(--paper);border-color:var(--ink-3);}
   .btn-ghost:hover{border-color:var(--thread);color:var(--paper);}
 
-  .hero-photo{position:relative;}
+  .hero-photo{position:relative;width:100%;max-width:320px;justify-self:end;}
   .hero-photo img{
     width:100%;
-    aspect-ratio:4/4.5;
+    aspect-ratio:1/1.05;
     object-fit:cover;
-    object-position:center 22%;
+    object-position:center 25%;
     border-radius:var(--radius);
     border:1px solid var(--ink-3);
     box-shadow:0 24px 60px -24px rgba(0,0,0,0.7);
@@ -242,7 +242,7 @@
   .cred-item .body small{display:block;color:var(--paper-faint);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;margin-top:3px;}
 
   /* ============ ABOUT ============ */
-  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;}
+  .about-grid{display:grid;grid-template-columns:230px 1fr;gap:44px;align-items:start;}
   .about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;border-radius:var(--radius);border:1px solid var(--ink-3);}
   .about-photo{position:sticky;top:96px;}
   .chapter{margin-bottom:38px;}
@@ -261,7 +261,7 @@
   }
 
   /* ============ LIFESTYLE ============ */
-  .life-block{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start;margin-bottom:60px;}
+  .life-block{display:grid;grid-template-columns:1fr 230px;gap:40px;align-items:start;margin-bottom:60px;}
   .life-block h3{font-size:1.45rem;margin-bottom:14px;}
   .life-block p{color:var(--paper-dim);margin-bottom:14px;max-width:560px;}
   .life-photos{display:flex;flex-direction:column;gap:14px;}
@@ -310,13 +310,14 @@
   /* ============ RESPONSIVE ============ */
   @media (max-width:960px){
     .hero{grid-template-columns:1fr;gap:36px;}
-    .hero-photo{max-width:380px;}
+    .hero-photo{max-width:250px;justify-self:start;}
     .stats-band{grid-template-columns:repeat(2,1fr);}
     .featured-grid,.skills-grid,.sim-grid{grid-template-columns:repeat(2,1fr);}
     .about-grid{grid-template-columns:1fr;}
-    .about-photo{position:static;max-width:280px;}
+    .about-photo{position:static;max-width:210px;}
     .life-block{grid-template-columns:1fr;}
     .life-photos{flex-direction:row;}
+    .life-photos img{max-width:210px;}
     .contact-grid{grid-template-columns:repeat(2,1fr);}
     .steps{grid-template-columns:repeat(4,1fr);}
   }
@@ -339,7 +340,8 @@
     .road-arrow{transform:rotate(90deg);padding:8px 0;align-self:flex-start;margin-left:24px;}
     .contact-grid{grid-template-columns:1fr;}
     .flagship{padding:26px;}
-    .life-photos{flex-direction:column;}
+    .life-photos{flex-direction:row;gap:12px;}
+    .life-photos img{width:calc(50% - 6px);max-width:none;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
