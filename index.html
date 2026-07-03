@@ -298,6 +298,8 @@
   .contact-card:hover{transform:translateY(-3px);border-color:var(--thread);}
   .contact-card .k{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--paper-faint);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:9px;}
   .contact-card .v{font-weight:600;color:var(--paper);font-size:0.92rem;word-break:break-word;}
+  .li-badge-wrap{margin-top:30px;min-height:80px;}
+  .li-badge-wrap .LI-simple-link{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;}
 
   /* ============ FOOTER ============ */
   footer{border-top:1px solid var(--ink-3);padding:34px 0;}
@@ -755,6 +757,11 @@
         <span class="v">Rafsan Data &amp; AI Lab →</span>
       </a>
     </div>
+    <div class="li-badge-wrap reveal">
+      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="ahmed-al-rafsan-" data-version="v1">
+        <a class="badge-base__link LI-simple-link" href="https://au.linkedin.com/in/ahmed-al-rafsan-?trk=profile-badge">Ahmed Al Rafsan on LinkedIn</a>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -771,6 +778,7 @@
   </div>
 </footer>
 
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 <script>
 (function(){
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -792,6 +800,9 @@
     menuToggle.setAttribute('aria-expanded','false');
     if(updateHash !== false){
       history.replaceState(null, '', '#' + tab);
+    }
+    if(tab === 'contact' && window.LIRenderAll){
+      try { window.LIRenderAll(); } catch(e) {}
     }
     observeReveals();
   }
