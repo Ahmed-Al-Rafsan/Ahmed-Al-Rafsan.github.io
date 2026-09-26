@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Al Rafsan — Data Analyst · Melbourne</title>
 <meta name="description" content="Ahmed Al Rafsan is a Melbourne-based Data Analyst — SQL, Power BI, Python, Excel, Tableau. Real client capstone, ML-backed portfolio projects, and the story behind an unconventional path into data.">
+<meta name="theme-color" content="#080f18">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23080f18'/%3E%3Cpath d='M12 46 28 15h8l16 31h-9l-3-7H24l-3 7zm15-14h10l-5-10z' fill='%23dfad50'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="portrait-wall.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -352,11 +355,94 @@
     html{scroll-behavior:auto;}
     .reveal{opacity:1;transform:none;}
   }
+
+  /* 2026 portfolio refinement: an editorial page with a precise data layer */
+  :root{
+    --ink:#080f18;--ink-2:#101d2a;--ink-3:#263948;
+    --paper:#f3f0e8;--paper-dim:#b2c0c8;--paper-faint:#80939f;
+    --signal:#e6b35b;--signal-dim:rgba(230,179,91,.16);
+    --thread:#90d9e8;--ok:#a6d0aa;--maxw:1180px;
+  }
+  body{background-image:radial-gradient(circle at 86% 13%,rgba(36,88,106,.23),transparent 28%),radial-gradient(circle at 1px 1px,rgba(194,223,227,.055) 1px,transparent 0);background-size:auto,30px 30px;}
+  .container{padding:0 30px;}
+  .skip-link{position:absolute;top:-60px;left:20px;z-index:100;background:var(--signal);color:var(--ink);padding:10px 14px;font-weight:700;}
+  .skip-link:focus{top:12px;color:var(--ink);}
+  .nav{background:rgba(8,15,24,.94);border-bottom-color:#29404d;}
+  .nav-inner{min-height:72px;padding:13px 30px;}
+  .logo-mark{width:39px;height:39px;border-radius:5px;font-size:.7rem;transform:rotate(-5deg);}
+  .logo-text{font-size:1.15rem;letter-spacing:-.02em;}
+  .nav-links{gap:21px;}
+  .nav-link{font-size:.73rem;letter-spacing:.075em;}
+  .nav-link:last-child{border:1px solid rgba(230,179,91,.55);border-radius:3px;padding:8px 12px;color:var(--signal);}
+  .nav-link:last-child.active,.nav-link:last-child:hover{background:var(--signal);color:var(--ink);}
+  .section{padding:65px 0 105px;}
+  #home{padding-top:0;}
+  .hero{position:relative;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:8%;min-height:565px;padding:72px 0 64px;margin:0;border-bottom:1px solid #29404d;align-items:center;}
+  .hero::before{content:"01 / PORTFOLIO";position:absolute;left:0;bottom:22px;font:500 .66rem 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#637d8b;}
+  .type-line{font-size:.76rem;min-height:auto;text-transform:uppercase;letter-spacing:.14em;margin-bottom:22px;font-weight:600;}
+  .cursor{display:none;}
+  h1.hero-h1{font-size:clamp(2.7rem,4.35vw,4.55rem);line-height:1.07;letter-spacing:-.045em;margin-bottom:24px;max-width:760px;}
+  .hero-h1 em{font-weight:500;}
+  .hero-body{font-size:1.06rem;line-height:1.7;max-width:630px;margin-bottom:22px;}
+  .status-pill{font-size:.7rem;line-height:1.55;border:0;border-left:2px solid var(--signal);border-radius:0;padding:3px 0 3px 13px;margin-bottom:26px;color:#cbd5d6;}
+  .cta-row{gap:12px;}
+  .btn{border-radius:4px;min-height:48px;padding:11px 21px;}
+  .btn-primary{box-shadow:0 8px 35px rgba(230,179,91,.15);}
+  .hero-photo{max-width:355px;justify-self:end;}
+  .hero-photo img{aspect-ratio:4/5;object-position:center 20%;border-radius:4px;filter:saturate(.85);box-shadow:0 30px 75px -26px rgba(0,0,0,.8);}
+  .hero-photo::after{inset:18px -17px -17px 18px;border-radius:4px;border-color:rgba(230,179,91,.6);}
+  .hero-photo::before{content:"AHMED AL RAFSAN  /  MELBOURNE";position:absolute;bottom:16px;left:-22px;background:var(--signal);color:var(--ink);font:600 .62rem 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:10px 13px;z-index:2;transform:rotate(-3deg);}
+  .terminal{display:none;}
+  .stats-band{margin:33px 0 76px;gap:0;border:1px solid #314752;background:#0d1b28;}
+  .stat{background:none;border:0;border-right:1px solid #314752;border-radius:0;padding:25px 22px;min-height:122px;}
+  .stat:last-child{border-right:0;}
+  .stat .num{font-family:'IBM Plex Sans',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-.06em;}
+  .stat .lbl{font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;letter-spacing:0;line-height:1.45;margin-top:6px;}
+  .featured-head{align-items:end;padding-bottom:15px;border-bottom:1px solid #314752;margin-bottom:22px;}
+  .featured-head h2,.section-head h2{font-size:clamp(2rem,3.2vw,3.05rem);letter-spacing:-.035em;line-height:1.16;}
+  .featured-grid{grid-template-columns:1.35fr 1fr 1fr;gap:16px;}
+  .card{position:relative;border-radius:5px;background:#10202d;padding:29px;overflow:hidden;}
+  .featured-grid .card:first-child{background:linear-gradient(140deg,#152b37,#10212e);border-color:rgba(230,179,91,.55);}
+  .featured-grid .card:first-child::after{content:"01";position:absolute;right:16px;bottom:-57px;font:700 10rem 'IBM Plex Sans',sans-serif;letter-spacing:-.1em;color:rgba(230,179,91,.065);pointer-events:none;}
+  .card h3{font-size:1.3rem;line-height:1.24;letter-spacing:-.015em;}
+  .card p{font-size:.94rem;line-height:1.66;}
+  .card-links a{color:var(--thread);border-bottom:1px solid rgba(144,217,232,.45);padding-bottom:3px;}
+  .badge{border-radius:3px;font-size:.65rem;padding:5px 9px;}
+  .section-head{max-width:780px;margin-bottom:45px;}
+  .section-head p{line-height:1.7;}
+  .flagship{border-radius:5px;background:linear-gradient(130deg,#132734,#0c1925);padding:38px;}
+  .flagship h3{font-size:1.85rem;letter-spacing:-.03em;}
+  .flagship p{max-width:850px;}
+  .impact-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:26px 0 30px;}
+  .impact-step{background:#0b1a27;border:1px solid #334c57;padding:18px 20px;min-height:122px;}
+  .impact-step strong{display:block;font:700 clamp(1.8rem,3vw,2.55rem) 'IBM Plex Sans',sans-serif;letter-spacing:-.06em;line-height:1.1;color:var(--signal);}
+  .impact-step span{display:block;font-size:.8rem;line-height:1.45;color:#b9cbd0;margin-top:8px;}
+  .impact-step:last-child{border-color:var(--signal);}
+  .projects-grid,.sim-grid{gap:16px;}
+  .projects-grid .card{min-height:290px;}
+  .tshape{max-width:900px;}
+  .t-arm,.t-stem,.skill-card,.pcuvcod,.cred-col,.road-step,.step,.post,.contact-card{border-radius:5px;}
+  .t-arm{background:#102330;}
+  .t-stem{background:linear-gradient(180deg,#172d37,#122330);}
+  .post{padding:32px;}
+  .post-toggle{border-bottom:1px solid var(--thread);padding-bottom:3px;}
+  #contact .section-head{margin-bottom:34px;}
+  .contact-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .contact-card:first-child{background:var(--signal);border-color:var(--signal);grid-row:span 2;display:flex;flex-direction:column;justify-content:center;min-height:190px;}
+  .contact-card:first-child .k,.contact-card:first-child .v{color:var(--ink);}
+  .contact-card:first-child .v{font-size:clamp(1.1rem,2vw,1.6rem);letter-spacing:-.03em;}
+  .contact-card:not(:first-child){padding:19px 24px;}
+  .contact-card:nth-child(4){grid-column:2;}
+  .li-badge-wrap{margin-top:24px;}
+  @media(max-width:960px){.hero{gap:5%;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);}.hero-photo{max-width:300px;}.featured-grid{grid-template-columns:repeat(2,1fr);}.featured-grid .card:first-child{grid-column:1/-1;}.stats-band{grid-template-columns:repeat(2,1fr);}.stat:nth-child(2){border-right:0;}.stat:nth-child(-n+2){border-bottom:1px solid #314752;}}
+  @media(max-width:768px){.container{padding:0 20px;}.nav-inner{padding:12px 20px;}.nav-links{gap:0;}.nav-link:last-child{margin-top:10px;}.hero{grid-template-columns:1fr;padding:58px 0 66px;gap:40px;}.hero-photo{justify-self:start;max-width:295px;}.hero-photo::before{left:8px;}.hero::before{bottom:16px;}h1.hero-h1{font-size:clamp(2.5rem,10vw,3.7rem);}.featured-grid{grid-template-columns:1fr;}.featured-grid .card:first-child{grid-column:auto;}.impact-flow{grid-template-columns:1fr;}.impact-step{min-height:auto;}.contact-grid{grid-template-columns:1fr;}.contact-card:first-child,.contact-card:nth-child(4){grid-row:auto;grid-column:auto;}.contact-card:first-child{min-height:155px;}}
+  @media(max-width:480px){.logo-text{font-size:1.02rem;}.stats-band{grid-template-columns:1fr;}.stat,.stat:nth-child(2){border-right:0;border-bottom:1px solid #314752;min-height:auto;padding:19px;}.stat:last-child{border-bottom:0;}.hero-photo{width:82%;}.hero-photo::after{inset:13px -11px -11px 13px;}}
 </style>
 </head>
 <body>
 
-<nav class="nav">
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#home" class="logo tab-trigger" data-tab="home">
       <span class="logo-mark">AAR</span>
@@ -371,22 +457,22 @@
       <a href="#blog" class="nav-link tab-trigger" data-tab="blog">Blog</a>
       <a href="#contact" class="nav-link tab-trigger" data-tab="contact">Contact</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<main class="container">
+<main class="container" id="main" tabindex="-1">
 
   <!-- ================= HOME ================= -->
   <section id="home" class="section active">
     <div class="hero">
       <div>
-        <div class="type-line"><span id="typeTarget"></span><span class="cursor">|</span></div>
+        <div class="type-line">Data Analyst / Melbourne, Australia</div>
         <h1 class="hero-h1">I don't just build dashboards. I find the story the numbers are <em>hiding</em>.</h1>
-        <p class="hero-body">My path here wasn't a straight line — aeronautical engineering, an MBA in Human Resource Management, then a Master of Business Information Systems in Data Analytics. That mix is why I think like an engineer, read a room like an HR analyst, and put both to work in SQL, Power BI, and Python.</p>
-        <span class="status-pill"><span class="dot">●</span>&nbsp; Master of Business Information Systems (Data Analytics) — completing 2026 &nbsp;·&nbsp; PL-300 &amp; DP-900 in progress &nbsp;·&nbsp; Melbourne</span>
+        <p class="hero-body">Aeronautical engineering taught me to test assumptions. HR taught me what stakeholders need to decide. Now I put both to work in SQL, Python, and Power BI — turning messy data into useful answers.</p>
+        <span class="status-pill">MBIS (Data Analytics) completed, 2026 &nbsp;·&nbsp; Melbourne-based &nbsp;·&nbsp; Open to data analyst roles</span>
         <div class="cta-row">
           <a href="#projects" class="btn btn-primary tab-trigger" data-tab="projects">View my projects</a>
           <a href="#contact" class="btn btn-ghost tab-trigger" data-tab="contact">Get in touch</a>
@@ -397,19 +483,11 @@
       </div>
     </div>
 
-    <div class="terminal reveal">
-      <div class="term-bar">
-        <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
-        <span class="term-title">who_is_rafsan.sql — mysql</span>
-      </div>
-      <div class="term-body" id="termBody"></div>
-    </div>
-
     <div class="stats-band">
-      <div class="stat reveal"><div class="num"><span class="countup" data-target="9855">0</span></div><div class="lbl">Australian schools analysed in a live client capstone</div></div>
-      <div class="stat reveal"><div class="num"><span class="countup" data-target="0.972" data-decimals="3">0</span></div><div class="lbl">Random Forest AUC on the held-out test set</div></div>
-      <div class="stat reveal"><div class="num"><span class="countup" data-target="1">0</span>M+</div><div class="lbl">retail transactions processed for RFM segmentation</div></div>
-      <div class="stat reveal"><div class="num"><span class="countup" data-target="500">0</span>+</div><div class="lbl">employees' KPI reporting owned at CEO &amp; GM level</div></div>
+      <div class="stat reveal"><div class="num">9,855</div><div class="lbl">Australian schools analysed in a live client capstone</div></div>
+      <div class="stat reveal"><div class="num">0.972</div><div class="lbl">Random Forest AUC on the held-out test set</div></div>
+      <div class="stat reveal"><div class="num">1M+</div><div class="lbl">retail transactions studied for RFM segmentation</div></div>
+      <div class="stat reveal"><div class="num">500+</div><div class="lbl">employees in HR KPI reporting for senior leaders</div></div>
     </div>
 
     <div class="featured-head">
@@ -422,7 +500,7 @@
         <h3>Schools Priority Targeting Model</h3>
         <p>Led a 6-person team through a live 6-month capstone for a real Australian client — ML pipeline across 9,855 schools, delivered into their CRM.</p>
         <div class="card-links">
-          <a href="https://github.com/Ahmed-Al-Rafsan/schools-priority-segmentation-capstone" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://github.com/Ahmed-Al-Rafsan/schools-priority-segmentation-analysis" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </article>
       <article class="card reveal">
@@ -461,7 +539,13 @@
         <span class="badge badge-tag">Python · scikit-learn · Power BI</span>
       </div>
       <h3>Australian Schools Priority Targeting Model</h3>
-      <p>A six-month industry capstone for a real Australian small-business client, led end-to-end as head of a 6-person cross-functional team. I architected the full ML pipeline on a 9,855-school national dataset — cleaning, feature engineering, a custom priority score, K-Means market segmentation, and a Random Forest validator. One design decision I'd defend anywhere: the target-correlated feature was deliberately excluded from model inputs to prevent data leakage, which made the priority logic independently defensible at client handover. Final delivery: 3,344 high-priority schools identified, an operational Top-200 outreach list ingested directly into the client's CRM, and a 2-page executive Power BI dashboard.</p>
+      <p><strong>Business question:</strong> Which schools should a small outreach team contact first? I led a six-person team through a live industry capstone, building a Python pipeline that cleaned national school data, scored priorities, segmented the market with K-Means, and used Random Forest to examine high-priority patterns. I excluded a target-correlated feature to avoid leakage.</p>
+      <p><strong>Decision delivered:</strong> A Top-200 CRM-ready outreach list and a two-page Power BI executive dashboard for the client.</p>
+      <div class="impact-flow" aria-label="Project decision flow">
+        <div class="impact-step"><strong>9,855</strong><span>Australian schools analysed</span></div>
+        <div class="impact-step"><strong>3,344</strong><span>high-priority schools identified</span></div>
+        <div class="impact-step"><strong>Top 200</strong><span>outreach records prepared for CRM</span></div>
+      </div>
       <div class="chip-row">
         <span class="chip"><b>9,855</b> schools</span>
         <span class="chip">K-Means <b>k=4</b></span>
@@ -476,7 +560,7 @@
         <span class="commendation-source">— Official Client Commendation Report</span>
       </div>
       <div class="card-links">
-        <a href="https://github.com/Ahmed-Al-Rafsan/schools-priority-segmentation-capstone" target="_blank" rel="noopener">View repo ↗</a>
+        <a href="https://github.com/Ahmed-Al-Rafsan/schools-priority-segmentation-analysis" target="_blank" rel="noopener noreferrer">View repo ↗</a>
       </div>
     </article>
 
@@ -613,7 +697,7 @@
       </div>
       <div class="cred-col reveal">
         <h3>Education</h3>
-        <div class="cred-item"><span class="mark wip">◌</span><div class="body">Master of Business Information Systems (Data Analytics)<small>Australian Institute of Higher Education, Melbourne · completing 2026</small></div></div>
+        <div class="cred-item"><span class="mark done">✓</span><div class="body">Master of Business Information Systems (Data Analytics)<small>Australian Institute of Higher Education, Melbourne · completed 2026</small></div></div>
         <div class="cred-item"><span class="mark done">✓</span><div class="body">Master of Business Administration (HRM)<small>North South University · 2019–2021 · GPA 3.44</small></div></div>
         <div class="cred-item"><span class="mark done">✓</span><div class="body">BEng Aeronautical Engineering (Aircraft Design &amp; Engineering)<small>Nanchang Hangkong University, China · 2014–2018</small></div></div>
       </div>
@@ -634,7 +718,7 @@
         <div class="chapter reveal">
           <span class="ch-label">PRESENT</span>
           <h3>Data analyst, Melbourne</h3>
-          <p>Right now I'm finishing a Master of Business Information Systems (Data Analytics) at the Australian Institute of Higher Education in Melbourne. My week runs on the unglamorous parts of the craft done well: cleaning messy data with a framework I built myself, asking the right question of it in SQL, and shipping the dashboard that turns "here are some numbers" into "here's what we do about it."</p>
+          <p>I've completed a Master of Business Information Systems (Data Analytics) at the Australian Institute of Higher Education in Melbourne. My focus is the unglamorous parts of the craft done well: cleaning messy data, asking the right question in SQL, and shipping the dashboard that turns "here are some numbers" into "here's what we do about it."</p>
           <p>Alongside study I hold down retail work — the kind of schedule that teaches you exactly what a disciplined hour is worth.</p>
         </div>
         <div class="chapter reveal">
@@ -652,13 +736,13 @@
         <div class="chapter reveal">
           <span class="ch-label">FUTURE</span>
           <h3>The deliberate path</h3>
-          <p>From here the plan is specific: deepen as a data analyst now, grow into the analytics-engineering bridge — SQL, dbt, Git, cloud warehousing — and from there into AI-focused analytics engineering. Same thread the whole way: technical rigour a business can actually use.</p>
+          <p>My immediate focus is data analyst work. I am deepening the SQL, Python, reporting, and modelling skills behind it, while exploring how data-driven methods can eventually reconnect with my aeronautical engineering background.</p>
           <div class="roadmap">
             <div class="road-step now"><span class="label">Now</span><span class="name">Data Analyst</span></div>
             <span class="road-arrow">→</span>
-            <div class="road-step"><span class="label">Bridge · 2027–28</span><span class="name">Analytics Engineer</span></div>
+            <div class="road-step"><span class="label">Build depth</span><span class="name">Analytics &amp; data systems</span></div>
             <span class="road-arrow">→</span>
-            <div class="road-step"><span class="label">Target · 2028+</span><span class="name">AI Analytics Engineer</span></div>
+            <div class="road-step"><span class="label">Longer term</span><span class="name">Aerospace + data research</span></div>
           </div>
         </div>
         <p class="t-line reveal">Three fields, three countries, one profile: a T-shaped analyst — deep where it counts, wide enough to collaborate everywhere else.</p>
@@ -701,7 +785,7 @@
     <span class="eyebrow">-- blog</span>
     <div class="section-head">
       <h2>Notes from the work.</h2>
-      <p>Short, practical writing on the tools I use every day — what surprised me, what the defaults hide, and how I actually think about the craft. One post a month.</p>
+      <p>Short, practical writing on the tools I use — what surprised me, what the defaults hide, and how I think about the craft.</p>
     </div>
 
     <article class="post reveal">
@@ -800,11 +884,21 @@
   var navLinks = document.getElementById('navLinks');
   var menuToggle = document.getElementById('menuToggle');
   var validTabs = ['home','projects','skills','about','lifestyle','blog','contact'];
+  document.querySelector('.skip-link').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('main').focus();
+  });
 
   function showTab(tab, updateHash){
     if(validTabs.indexOf(tab) === -1) tab = 'home';
+    document.title = (tab === 'home' ? 'Ahmed Al Rafsan' : tab.charAt(0).toUpperCase() + tab.slice(1) + ' — Ahmed Al Rafsan') + ' · Data Analyst';
     sections.forEach(function(s){ s.classList.toggle('active', s.id === tab); });
-    navLinkEls.forEach(function(l){ l.classList.toggle('active', l.dataset.tab === tab); });
+    navLinkEls.forEach(function(l){
+      var active = l.dataset.tab === tab;
+      l.classList.toggle('active', active);
+      if(active) l.setAttribute('aria-current', 'page');
+      else l.removeAttribute('aria-current');
+    });
     window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'});
     navLinks.classList.remove('open');
     menuToggle.classList.remove('open');
@@ -835,100 +929,11 @@
     showTab(location.hash.replace('#','') || 'home', false);
   });
 
-  /* ---------- Typing rotator ---------- */
-  var lines = [
-    'Data Analyst — Melbourne, Australia',
-    'I find the story behind the numbers.',
-    'SQL · Power BI · Python · Excel · Tableau',
-    'Deep in analytics. Wide across the stack.'
-  ];
-  var typeTarget = document.getElementById('typeTarget');
-  if(reduceMotion){
-    typeTarget.textContent = lines[0];
-  } else {
-    var li = 0, ci = 0, deleting = false;
-    (function tick(){
-      var line = lines[li];
-      if(!deleting){
-        ci++;
-        typeTarget.textContent = line.slice(0, ci);
-        if(ci === line.length){ deleting = true; return setTimeout(tick, 2200); }
-        return setTimeout(tick, 46);
-      } else {
-        ci--;
-        typeTarget.textContent = line.slice(0, ci);
-        if(ci === 0){ deleting = false; li = (li+1) % lines.length; return setTimeout(tick, 350); }
-        return setTimeout(tick, 22);
-      }
-    })();
-  }
-
-  /* ---------- Terminal typewriter ---------- */
-  var termPlain =
-"-- who_is_rafsan.sql\n" +
-"SELECT name, role, edge\n" +
-"FROM   analysts\n" +
-"WHERE  city = 'Melbourne'\n" +
-"  AND  stakeholder_fluency = TRUE\n" +
-"  AND  background IN ('aero_eng', 'HR', 'data');\n" +
-"\n" +
-"-- 1 row returned in 0.03s\n" +
-"-- Ahmed Al Rafsan \u00b7 Data Analyst \u00b7 3 domains \u00d7 3 countries";
-
-  var termHTML =
-'<span class="cmt">-- who_is_rafsan.sql</span>\n' +
-'<span class="kw">SELECT</span> name, role, edge\n' +
-'<span class="kw">FROM</span>   analysts\n' +
-'<span class="kw">WHERE</span>  city = <span class="str">\'Melbourne\'</span>\n' +
-'  <span class="kw">AND</span>  stakeholder_fluency = <span class="kw">TRUE</span>\n' +
-'  <span class="kw">AND</span>  background <span class="kw">IN</span> (<span class="str">\'aero_eng\'</span>, <span class="str">\'HR\'</span>, <span class="str">\'data\'</span>);\n' +
-'\n' +
-'<span class="res">-- 1 row returned in 0.03s</span>\n' +
-'<span class="res">-- Ahmed Al Rafsan \u00b7 Data Analyst \u00b7 3 domains \u00d7 3 countries</span>';
-
-  var termBody = document.getElementById('termBody');
-  if(reduceMotion){
-    termBody.innerHTML = termHTML;
-  } else {
-    var ti = 0;
-    (function typeTerm(){
-      if(ti <= termPlain.length){
-        termBody.textContent = termPlain.slice(0, ti);
-        ti += 2;
-        setTimeout(typeTerm, 18);
-      } else {
-        termBody.innerHTML = termHTML;
-      }
-    })();
-  }
-
-  /* ---------- Reveal on scroll + count-up ---------- */
-  var counted = false;
-  function countUp(el){
-    var target = parseFloat(el.dataset.target);
-    var decimals = parseInt(el.dataset.decimals || '0', 10);
-    if(reduceMotion){
-      el.textContent = target.toLocaleString('en-AU', {minimumFractionDigits:decimals, maximumFractionDigits:decimals});
-      return;
-    }
-    var dur = 1400, start = null;
-    function frame(ts){
-      if(!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var val = target * eased;
-      el.textContent = val.toLocaleString('en-AU', {minimumFractionDigits:decimals, maximumFractionDigits:decimals});
-      if(p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-
+  /* Keep the evidence visible immediately; motion is reserved for section changes. */
   var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         entry.target.classList.add('in');
-        entry.target.querySelectorAll('.countup').forEach(countUp);
-        if(entry.target.classList.contains('countup')) countUp(entry.target);
         io.unobserve(entry.target);
       }
     });
@@ -937,14 +942,10 @@
   function observeReveals(){
     if(!io){
       document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
-      document.querySelectorAll('.countup').forEach(countUp);
       return;
     }
     document.querySelectorAll('.section.active .reveal:not(.in)').forEach(function(el){ io.observe(el); });
   }
-
-  /* stats are inside .reveal stats; also observe stats directly */
-  document.querySelectorAll('.stat').forEach(function(s){ if(io) io.observe(s); });
 
   /* ---------- Blog toggles ---------- */
   document.querySelectorAll('.post-toggle').forEach(function(btn){
