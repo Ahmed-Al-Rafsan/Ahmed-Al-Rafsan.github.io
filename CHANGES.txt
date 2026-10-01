@@ -1,0 +1,24 @@
+RAFSAN — FIRST-CLASS EDITION · 1 October 2026
+
+WHAT CHANGED
+- New colour scheme across the whole site: midnight navy, champagne gold and ivory,
+  with a matching dark mode. Serif headings for a premium, editorial feel.
+- Project, blog and video covers redone in deep jewel tones with gold details.
+- Banner redesigned with a gold flight path; new navy-and-gold "R" logo and browser icon.
+- NEW PAGE: Cruising Altitude (tab + sidebar link + a teaser card at the bottom of Home).
+  Scroll and the view through an aircraft window climbs: Runway, Climb, Jet Stream,
+  Ascent, Orbit. The aircraft changes to a jet, a rocket and a satellite on the way up,
+  with a live altimeter. No job titles, dates or progress labels anywhere.
+- Ctrl+K (or /) jumps to search. Blog posts show a thin gold reading-progress bar.
+- Photos re-compressed: website file is now about 0.56 MB instead of 1.1 MB.
+- Added share-preview tags (LinkedIn/X) and search-engine profile data.
+
+WHAT DID NOT CHANGE
+- All projects, videos, blog posts, wording, links, search, filters, bookmarks and the
+  light/dark button work as before.
+- Blog Studio works with this file (tested: loads 3 posts, adds a 4th, exports cleanly).
+- Publishing is the same: upload only index.html to GitHub, keep the name index.html.
+
+TESTED
+- Every page in light and dark, at desktop and phone sizes.
+- Reduced-motion setting: the flight steps between phases instead of moving smoothly.
