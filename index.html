@@ -274,6 +274,44 @@ h1,h2,.brand-word,.thumb-title,.page-heading h2,.section-title h2,.section-title
 @media(max-width:720px){.alt-teaser{grid-template-columns:1fr}.alt-teaser-art{min-height:170px}.alt-teaser-copy{padding:26px 24px}.alt-teaser-copy h2{font-size:28px}}
 @media(max-width:460px){.alt-hero h1{font-size:44px}.alt-sub{font-size:19px}.alt-window{height:42vh;border-radius:80px}.alt-scene{border-radius:72px}}
 @media(prefers-reduced-motion:reduce){.alt-phase{transform:none}}
+
+/* ---- v2: direct roles + astronaut host ---- */
+.alt-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:30px;align-items:center;padding:64px 56px 70px}
+.alt-hero-art{opacity:.35}
+.alt-hero .alt-cue{position:absolute;left:56px;bottom:26px;margin:0}
+.alt-howto{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.alt-howto li{display:flex;align-items:center;gap:9px;font-size:12px;color:#E9DDC2;border:1px solid #D9BC8247;background:#0F1B3399;border-radius:999px;padding:7px 14px 7px 7px}
+.alt-howto b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#0F1B33;font-size:11px}
+.alt-host{position:relative;display:flex;flex-direction:column;align-items:center}
+.astro{width:min(260px,100%);height:auto;filter:drop-shadow(0 18px 30px #0008)}
+.astro-float{animation:astro-float 6s ease-in-out infinite}
+@keyframes astro-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.astro-wave{transform-origin:170px 124px;animation:astro-wave 2.2s ease-in-out infinite}
+@keyframes astro-wave{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg)}}
+.alt-bubble{position:relative;max-width:300px;background:var(--ivory);color:#0F1B33;border-radius:20px 20px 20px 6px;padding:16px 20px;font-family:var(--serif);font-size:17px;line-height:1.45;box-shadow:0 18px 40px #0007,inset 0 0 0 1px #D9BC8280;margin-bottom:6px;animation:bubble-in .8s .3s both cubic-bezier(.2,.8,.2,1)}
+.alt-bubble strong{display:block;font-weight:600;color:#8A6A2F;margin-bottom:2px}
+.alt-bubble::after{content:"";position:absolute;left:36px;bottom:-12px;width:22px;height:22px;background:var(--ivory);transform:rotate(45deg);border-radius:0 0 6px 0;box-shadow:inset -1px -1px 0 #D9BC8280}
+@keyframes bubble-in{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+.alt-hud em{display:block;font-style:normal;font-size:11px;letter-spacing:2.6px;text-transform:uppercase;color:#F3DFAE;margin-top:4px;font-weight:700}
+.alt-start{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;text-shadow:0 2px 10px #0009;pointer-events:none;background:#0F1B3399;border:1px solid #D9BC8266;border-radius:999px;padding:9px 16px 9px}
+.alt-start i{display:none}
+.alt-num span{font-family:var(--sans);font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase;color:var(--muted);order:3}
+.alt-num{gap:12px}
+.alt-num::after{order:2}
+.alt-name{font-size:clamp(34px,3.6vw,52px)}
+.alt-line{font-family:var(--sans);font-style:normal;font-size:16px;line-height:1.8}
+@media(max-width:900px){
+ .alt-hero{grid-template-columns:1fr;padding:40px 24px 70px;gap:22px}
+ .alt-hero-art{display:none}
+ .alt-host{flex-direction:row;align-items:flex-end;gap:6px}
+ .astro{width:130px;flex-shrink:0}
+ .alt-bubble{font-size:15px;max-width:none;flex:1;border-radius:20px 20px 6px 20px}
+ .alt-bubble::after{left:auto;right:-8px;bottom:14px}
+ .alt-hero .alt-cue{left:24px}
+ .alt-hud em{font-size:9px}
+ .alt-line{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.alt-bubble{animation:none}}
 </style>
 </head>
 <body>
@@ -425,11 +463,11 @@ function searchPage(){const term=query.toLocaleLowerCase().trim();const projectM
    ========================================================================== */
 ICONS.plane='<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>';
 const ALT_PHASES=[
- ['01','Runway','Signal','Every flight begins with reading the instruments.'],
- ['02','Climb','Structure','Making the data trustworthy, so everyone can rely on it.'],
- ['03','Jet Stream','Flow','Systems that keep moving on their own, mile after mile.'],
- ['04','Ascent','Intelligence','Building systems that reason.'],
- ['05','Orbit','Beyond','Asking questions no dataset has answered yet.']
+ ['01','Runway','Data Analyst','Turning raw numbers into clear answers people can act on. Asking the right business question, checking the data honestly, and telling the story behind the numbers. Every flight starts here.'],
+ ['02','Climb','Analytics Engineer','Shaping data into clean, tested and well-documented models, so every report and dashboard in a business stands on the same trusted foundation.'],
+ ['03','Jet Stream','Data Engineer','Building the pipelines that move data reliably and at scale, quietly doing their job in the background, day after day.'],
+ ['04','Ascent','AI Engineer','Putting intelligence to work: building AI systems that read, reason and help people decide, designed with care for accuracy, safety and real-world use.'],
+ ['05','Orbit','Beyond: Research &amp; Innovation','Where engineering meets open questions. Advanced AI, research, and perhaps one day bringing my aerospace roots and AI together.']
 ];
 const PLANE_TOP='M14,0C14,-1.6 12,-2.2 9,-2.2L3,-2.2L-4,-11L-7.5,-11L-3.5,-2.2L-9,-2.2L-12,-6L-14.5,-6L-12.5,0L-14.5,6L-12,6L-9,2.2L-3.5,2.2L-7.5,11L-4,11L3,2.2L9,2.2C12,2.2 14,1.6 14,0Z';
 const altReduce=matchMedia('(prefers-reduced-motion: reduce)');
@@ -507,22 +545,47 @@ function altSceneSVG(){
  '<g id="alt-clouds" fill="#ffffff">'+near+'</g></svg>'
 }
 
+function astronautSVG(){
+ return '<svg class="astro" viewBox="0 0 240 260" aria-hidden="true" focusable="false"><defs>'+
+ '<linearGradient id="asSuit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#EEE7DA"/><stop offset="1" stop-color="#C9BFA9"/></linearGradient>'+
+ '<linearGradient id="asVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A4A86"/><stop offset=".55" stop-color="#0F1B33"/><stop offset="1" stop-color="#B8955A"/></linearGradient></defs>'+
+ '<ellipse cx="120" cy="132" rx="104" ry="104" fill="none" stroke="#D9BC82" stroke-opacity=".22"/><ellipse cx="120" cy="132" rx="78" ry="78" fill="none" stroke="#D9BC82" stroke-opacity=".12"/>'+
+ '<g class="astro-float">'+
+ '<rect x="70" y="100" width="100" height="94" rx="20" fill="#B9AE97"/>'+
+ '<rect x="80" y="182" width="30" height="50" rx="13" fill="url(#asSuit)"/><rect x="130" y="182" width="30" height="50" rx="13" fill="url(#asSuit)"/>'+
+ '<rect x="78" y="218" width="34" height="18" rx="8" fill="#14254A"/><rect x="128" y="218" width="34" height="18" rx="8" fill="#14254A"/>'+
+ '<rect x="76" y="110" width="88" height="86" rx="32" fill="url(#asSuit)" stroke="#D9BC82" stroke-opacity=".5"/>'+
+ '<rect x="100" y="138" width="40" height="24" rx="6" fill="#14254A"/><circle cx="110" cy="150" r="3.2" fill="#D9BC82"/><circle cx="121" cy="150" r="3.2" fill="#8EC2FF"/><circle cx="131" cy="150" r="3.2" fill="#E9DDC2"/>'+
+ '<path d="M92,170H148" stroke="#D9BC82" stroke-width="2"/>'+
+ '<g transform="rotate(18 82 124)"><rect x="56" y="118" width="26" height="58" rx="13" fill="url(#asSuit)"/><circle cx="69" cy="178" r="11" fill="#14254A"/></g>'+
+ '<g class="astro-wave"><rect x="158" y="70" width="26" height="60" rx="13" fill="url(#asSuit)" transform="rotate(-28 158 124)"/><circle cx="196" cy="66" r="11.5" fill="#14254A"/></g>'+
+ '<circle cx="120" cy="74" r="48" fill="url(#asSuit)" stroke="#D9BC82" stroke-width="2"/>'+
+ '<rect x="83" y="52" width="74" height="50" rx="24" fill="url(#asVisor)"/>'+
+ '<path d="M92,64C98,56 110,54 120,55" stroke="#fff" stroke-opacity=".6" stroke-width="4" stroke-linecap="round" fill="none"/>'+
+ '<circle cx="142" cy="88" r="2" fill="#F3DFAE"/><circle cx="134" cy="94" r="1.2" fill="#fff" opacity=".7"/>'+
+ '<rect x="164" y="64" width="9" height="20" rx="4" fill="#D9BC82"/>'+
+ '</g></svg>'
+}
+
 function altitudePage(){
  return '<div class="alt-page"><header class="alt-hero"><div class="alt-hero-art" aria-hidden="true">'+flightArt('ah',{par:'xMaxYMid slice',stars:30,seed:5})+'</div>'+
- '<p class="eyebrow">A note on direction</p><h1>Cruising <em>Altitude</em></h1><p class="alt-sub">Where this is heading.</p>'+
- '<p class="alt-intro">Every good career keeps a flight plan. This one begins on the ground, with data, and keeps climbing.</p>'+
+ '<div class="alt-hero-copy"><p class="eyebrow">My career flight path</p><h1>Cruising <em>Altitude</em></h1><p class="alt-sub">From Data Analyst to AI Engineer, and beyond.</p>'+
+ '<p class="alt-intro">This is a short, scroll-driven story of where my career is heading. Each altitude is one stage of the journey, from the foundation I work in today to the horizon I am building towards.</p>'+
+ '<ol class="alt-howto"><li><b>1</b>Scroll down slowly</li><li><b>2</b>Watch the flight climb</li><li><b>3</b>Read each stage as you pass it</li></ol></div>'+
+ '<div class="alt-host"><div class="alt-bubble" role="note"><strong>Hi, I’m Rafsan.</strong> Want to know where I’m heading? Scroll down and enjoy the short flight.</div>'+astronautSVG()+'</div>'+
  '<span class="alt-cue"><i></i>SCROLL TO TAKE OFF</span></header>'+
  '<div class="alt-flight" id="alt-flight"><div class="alt-window"><div class="alt-scene">'+altSceneSVG()+
- '<div class="alt-hud" aria-hidden="true"><span>ALTITUDE</span><strong id="alt-readout">0 ft</strong></div>'+
+ '<div class="alt-hud" aria-hidden="true"><span>ALTITUDE</span><strong id="alt-readout">0 ft</strong><em id="alt-role">Data Analyst</em></div>'+
+ '<div class="alt-start" id="alt-start" aria-hidden="true">Scroll to take off<i></i></div>'+
  '<div class="alt-tape" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><span class="mark" id="alt-mark"></span></div></div></div>'+
- '<ol class="alt-phases">'+ALT_PHASES.map((ph,i)=>'<li class="alt-phase'+(i?'':' is-active')+'"><div class="alt-card"><p class="alt-num">'+ph[0]+'</p><h2 class="alt-name">'+ph[1]+'</h2><span class="alt-tag">'+ph[2]+'</span><p class="alt-line">'+ph[3]+'</p></div></li>').join('')+'</ol></div>'+
+ '<ol class="alt-phases">'+ALT_PHASES.map((ph,i)=>'<li class="alt-phase'+(i?'':' is-active')+'"><div class="alt-card"><p class="alt-num">'+ph[0]+'<span>'+ph[1]+'</span></p><h2 class="alt-name">'+ph[2]+'</h2><p class="alt-line">'+ph[3]+'</p></div></li>').join('')+'</ol></div>'+
  '<section class="alt-close"><div class="alt-rule" aria-hidden="true"><i></i></div><blockquote>Trained to build things that fly.<br><em>Now building systems that think.</em></blockquote><cite>Ahmed Al Rafsan · Aircraft Design &amp; Engineering · Data Analytics</cite>'+
  '<div class="alt-actions"><a class="btn primary" href="#projects">'+icon('grid')+'See the projects</a><a class="btn outline" href="#contact">'+icon('mail')+'Get in touch</a></div></section></div>'
 }
 
 function altTeaser(){
- return '<section class="content-section"><a class="alt-teaser" href="#altitude" aria-label="Cruising Altitude: where this is heading"><div class="alt-teaser-art" aria-hidden="true">'+flightArt('at',{sky:true,seed:3,stars:34})+'</div>'+
- '<div class="alt-teaser-copy"><span class="eyebrow">Cruising Altitude</span><h2>Where this is heading.</h2><p>A short flight through the direction behind the work.</p><span class="text-link">Take the flight '+icon('arrow')+'</span></div></a></section>'
+ return '<section class="content-section"><a class="alt-teaser" href="#altitude" aria-label="Cruising Altitude: where my career is heading"><div class="alt-teaser-art" aria-hidden="true">'+flightArt('at',{sky:true,seed:3,stars:34})+'</div>'+
+ '<div class="alt-teaser-copy"><span class="eyebrow">Cruising Altitude · My career flight path</span><h2>Where my career is heading.</h2><p>Data Analyst → Analytics Engineer → Data Engineer → AI Engineer → and beyond. A one-minute scroll.</p><span class="text-link">Take the flight '+icon('arrow')+'</span></div></a></section>'
 }
 
 /* ---------- scene engine ---------- */
@@ -560,6 +623,8 @@ function altitudeFrame(){
  const idx=Math.round(p*(items.length-1));
  if(altReduce.matches)p=idx/(items.length-1);
  items.forEach((li,i)=>li.classList.toggle('is-active',i===idx));
+ const role=root.querySelector('#alt-role');if(role)role.innerHTML=ALT_PHASES[idx][2].replace(/:.*$/,'');
+ const st=root.querySelector('#alt-start');if(st)st.style.opacity=altClamp(1-p/.06).toFixed(2);
  altDraw(root,p);
 }
 function readProgress(){

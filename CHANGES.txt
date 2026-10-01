@@ -22,3 +22,12 @@ WHAT DID NOT CHANGE
 TESTED
 - Every page in light and dark, at desktop and phone sizes.
 - Reduced-motion setting: the flight steps between phases instead of moving smoothly.
+
+UPDATE (v2, same evening)
+- Cruising Altitude now uses the real role names: Data Analyst, Analytics Engineer,
+  Data Engineer, AI Engineer, and Beyond: Research & Innovation, each with a short
+  plain-English description (no tool names). Flight phases stay as small labels.
+- New intro: a waving astronaut says "Hi, I'm Rafsan. Want to know where I'm heading?
+  Scroll down and enjoy the short flight," plus 3 simple how-to steps.
+- The window shows "Scroll to take off" at the start, and the current role under the altimeter.
+- Home teaser now reads "Where my career is heading" with the full path listed.
