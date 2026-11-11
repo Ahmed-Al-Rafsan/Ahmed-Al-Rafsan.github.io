@@ -42,8 +42,6 @@ button{font:inherit;cursor:pointer}
 .scene{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility 0s .9s}
 .scene.on{opacity:1;visibility:visible;transition:opacity .9s ease}
 .lobby svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.skip{position:absolute;top:18px;right:18px;z-index:5;background:rgba(12,23,48,.72);color:var(--brass2);border:1px solid rgba(230,206,150,.5);padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;backdrop-filter:blur(6px)}
-.skip:hover{background:var(--brass);color:var(--navy)}
 .glow{animation:glow 5s ease-in-out infinite}
 @keyframes glow{50%{opacity:.82}}
 .blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
@@ -71,7 +69,7 @@ button{font:inherit;cursor:pointer}
 .corridor{background:#070E20}
 .stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;margin:-360px 0 0 -640px;transform:scale(var(--fit,1));perspective:820px;perspective-origin:50% 44%}
 .world{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:translateZ(0)}
-.world.walk{transition:transform 12.5s cubic-bezier(.4,.05,.45,1)}
+.world.walk{transition:transform 9s cubic-bezier(.4,.05,.45,1)}
 .world.enter{transition:transform 1.6s cubic-bezier(.6,0,.8,.4)}
 .pl{position:absolute;left:0;top:0;backface-visibility:visible}
 .wall{width:700px;height:640px;margin:-320px 0 0 -350px;background:linear-gradient(180deg,#10224a 0,#17305f 46%,#122550 100%);overflow:hidden}
@@ -353,8 +351,6 @@ body.fast .note,body.fast .roomnav{display:none}
 </svg>
 
 <div id="intro" hidden>
-  <button class="skip" id="skip" type="button">Skip intro</button>
-
   <section class="scene lobby" id="lobby" aria-label="Reception">
     <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A navy and brass office reception. Mira, the illustrated virtual guide, stands behind the desk.">
       <defs>
@@ -533,7 +529,7 @@ function roomHTML(r,fast){
 }
 const foot='<footer><span>© '+new Date().getFullYear()+' '+esc(P.name)+'. '+esc(G.name)+' is an illustrated virtual guide, not a real person.</span><span><a href="classic.html">Classic page</a></span></footer>';
 
-let fast=store.get('rafsan-fast')==='1';
+let fast=false;
 function route(){return (location.hash||'').slice(1)||'office'}
 function render(first){
   const v=$('#view'), id=route();
@@ -553,7 +549,7 @@ function render(first){
 function go(){ if(fast||reduce){render();return}
   const w=$('#wipe');w.classList.add('shut');setTimeout(()=>{render();requestAnimationFrame(()=>w.classList.remove('shut'))},330)}
 addEventListener('hashchange',()=>{if(!$('#app').hidden)go()});
-$('#fastbtn').addEventListener('click',()=>{fast=!fast;store.set('rafsan-fast',fast?'1':'0');delete $('#view').dataset.fast;render();scrollTo(0,0)});
+$('#fastbtn').addEventListener('click',()=>{fast=!fast;delete $('#view').dataset.fast;render();scrollTo(0,0)});
 $('#replay').addEventListener('click',()=>startIntro());
 
 const intro=$('#intro'), dlg=$('#dialogue'), say=$('#say'), acts=$('#acts'), world=$('#world');
@@ -562,7 +558,7 @@ const later=(f,ms)=>{const t=setTimeout(f,ms);timers.push(t);return t};
 function clearAll(){timers.forEach(clearTimeout);timers=[];if(typing){clearInterval(typing);typing=null}}
 function speak(text,done){ if(typing)clearInterval(typing); dlg.classList.add('on');
   if(reduce){say.textContent=text;done&&later(done,900);return}
-  let i=0;say.textContent='';typing=setInterval(()=>{i+=2;say.textContent=text.slice(0,i);if(i>=text.length){clearInterval(typing);typing=null;done&&later(done,1100)}},28)}
+  let i=0;say.textContent='';typing=setInterval(()=>{i+=3;say.textContent=text.slice(0,i);if(i>=text.length){clearInterval(typing);typing=null;done&&later(done,850)}},28)}
 function buttons(list){acts.innerHTML='';list.forEach(([label,fn,gold])=>{const b=document.createElement('button');b.type='button';b.className='btn'+(gold?' gold':'');b.textContent=label;b.addEventListener('click',fn);acts.appendChild(b)});const f=acts.querySelector('button');f&&f.focus({preventScroll:true})}
 function fit(){$('#stage').style.setProperty('--fit',Math.max(innerWidth/1280,innerHeight/720))}
 const BAY=700, HH=320; let HW=500;
@@ -594,7 +590,7 @@ function startIntro(){
   world.className='world';world.style.transform='translateZ(0)';$('#walker').className='walker';$('#flash').classList.remove('on');
   const md=$('#maindoor');md&&md.classList.remove('open','knocking');
   dlg.classList.remove('on');acts.innerHTML='';say.textContent='';show('lobby');
-  later(()=>speak(G.welcome[0],()=>speak(G.welcome[1],()=>buttons([['Yes, show me the way',walk,true],['Go straight to the directory',()=>finish('directory')]]))),reduce?100:1300);
+  later(()=>speak(G.welcome[0],()=>speak(G.welcome[1],()=>buttons([['Yes, show me the way',walk,true]]))),reduce?100:500);
 }
 function walk(){
   clearAll();acts.innerHTML='';buildCorridor();fit();dlg.classList.remove('on');show('corridor');
@@ -602,9 +598,9 @@ function walk(){
   if(reduce){world.style.transform='translateZ('+stop+'px)';arrive();return}
   later(()=>{world.classList.add('walk');walker.classList.add('walking');world.style.transform='translateZ('+stop+'px)'},700);
   later(()=>speak(G.corridor[0]),1200);
-  later(()=>speak(G.corridor[1]),4700);
-  later(()=>speak(G.corridor[2]),8600);
-  later(arrive,13400);
+  later(()=>speak(G.corridor[1]),3700);
+  later(()=>speak(G.corridor[2]),6400);
+  later(arrive,9800);
 }
 function arrive(){
   const walker=$('#walker'), md=$('#maindoor');
@@ -620,18 +616,15 @@ function enter(){
   later(()=>finish('office'),2500);
 }
 function finish(target){
-  clearAll();store.set('rafsan-intro-seen','1');
+  clearAll();
   if(target&&('#'+target)!==location.hash){history.replaceState(null,'','#'+target)}
   $('#app').hidden=false;render(true);scrollTo(0,0);
   intro.classList.add('leaving');document.body.style.overflow='';
   setTimeout(()=>{intro.hidden=true;intro.classList.remove('leaving');$('#view').focus({preventScroll:true})},reduce?10:900);
 }
-$('#skip').addEventListener('click',()=>finish(location.hash?null:'office'));
 addEventListener('resize',fit);
-addEventListener('keydown',e=>{if(e.key==='Escape'&&!intro.hidden)finish(location.hash?null:'office')});
 
-if(location.hash||fast||store.get('rafsan-intro-seen')==='1'){$('#app').hidden=false;render(true)}
-else startIntro();
+startIntro();
 })();
 </script>
 </body>

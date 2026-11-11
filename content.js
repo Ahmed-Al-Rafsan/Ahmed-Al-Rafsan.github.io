@@ -86,7 +86,7 @@ window.SITE = {
           { value: "10", label: "data projects and simulations open on GitHub" }
         ]},
         { type: "timeline", title: "Four chapters", items: [
-          { when: "Now · Melbourne", title: "From analysis to reliable pipelines", text: "Building data pipelines that explain what they rejected and account for every row, as the base for AI engineering work." },
+          { when: "Now · Melbourne", title: "From analysis to reliable pipelines", text: "Building data pipelines that explain what they rejected and account for every row, as the base for AI engineering work. Data analyst intern at Powerdata Group Consulting, October to November 2026." },
           { when: "2024 to 2026 · Australia", title: "Data analytics", text: "Master of Business Information Systems (Data Analytics) at the Australian Institute of Higher Education. All course requirements completed, July 2026. Led a six-person industry capstone." },
           { when: "Bangladesh", title: "People and KPI reporting", text: "HR Executive at Kazi Farms Group for about two and a half years: KPI reporting and the performance-evaluation cycle for 500+ employees, reported to CEO and GM level. MBA completed April 2021." },
           { when: "2014 to 2017 · China", title: "Aircraft design engineering", text: "BEng in Aircraft Design and Engineering at Nanchang Hangkong University: CAD, flight dynamics and a finite-element graduation thesis." }
@@ -94,7 +94,7 @@ window.SITE = {
         { type: "list", title: "How he works, with the evidence", note: "Anyone can list soft skills. These are the places you can check them.", groups: [
           { name: "Careful with numbers", items: ["In the retail ETL build, 58 input rows reconcile exactly: 2 duplicates, 53 accepted, 3 quarantined with a reason.", "In the auto-sales build, a $49,713.64 gap between two views is explained to the cent."] },
           { name: "Honest about limits", items: ["The schools model reports ROC-AUC 0.972 and states plainly that it does not measure sales conversion.", "Every item in this office is marked Built, Building or Planned."] },
-          { name: "Leads and delivers", items: ["Led a six-person capstone team to a client handover: a Top 200 outreach list loaded into the client’s CRM and an executive dashboard.", "Ran a performance-evaluation cycle for 500+ employees."] },
+          { name: "Leads and delivers", items: ["Led a six-person capstone team to a client handover: a Top 200 outreach list loaded into the client’s CRM and an executive dashboard.", "Ran a performance-evaluation cycle for 500+ employees.", "As an intern, turned 106 AusTender awards into a dashboard and an executive brief, and recommended identity checks before any outreach."] },
           { name: "Consistent", items: ["Trains at the gym on a routine (see the Life room).", "Publishes a build log for each practice project."] }
         ]}
       ]
@@ -168,6 +168,8 @@ window.SITE = {
           { name: "", items: ["Profile", "Completeness", "Uniqueness", "Validity", "Consistency", "Outliers", "Document"] }
         ]},
         { type: "timeline", title: "Experience with data", items: [
+          { when: "Oct to Nov 2026 · Powerdata Group Consulting, Melbourne", title: "Data analyst intern", text: "Analysed Zoho CRM records and Excel and CSV datasets, cleaned and organised them for reporting, and built Power BI reports. Delivered a demonstration analysis of 106 historical AusTender awards worth $5.89M across 21 service categories, as an interactive dashboard and an executive brief. Provisionally grouped 81 supplier-name variants into 65 groups and found 4 IT and BI contracts worth $113.5K, and recommended identity checks and recent multi-agency data before any outreach." },
+          { when: "May 2025 to now · Chemist Warehouse, Melbourne", title: "Pharmacy assistant, with an Excel tracker he built", text: "Built an Excel task-tracking prototype for a six-person store team: daily task allocation, status dropdowns, conditional formatting and sign-off checks. Daily and monthly completion summaries run on COUNTIFS, SUMIFS and INDEX/MATCH, with a date-selectable management dashboard and a quick-start guide for staff." },
           { when: "Industry capstone · Australia", title: "Team lead and data analyst", text: "Led six people through a live client engagement: eight state and territory files merged and cleaned, a transparent priority score, K-Means segmentation and a Random Forest check, delivered as a CRM-ready list and a Power BI dashboard." },
           { when: "Kazi Farms Group · Bangladesh", title: "HR Executive, organisational development", text: "About two and a half years of KPI reporting and performance evaluation for 500+ employees, reported to CEO and GM level." }
         ]}
