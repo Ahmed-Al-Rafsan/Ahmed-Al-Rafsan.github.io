@@ -6,7 +6,7 @@ You only ever edit **one file: `content.js`**. Both pages read it.
 
 | File | What it is | Edit it? |
 |---|---|---|
-| `content.js` | Every word, project, skill, credential and blog post | **Yes, this one** |
+| `content.js` | Every word, project, skill, credential, photo caption and blog post | **Yes, this one** |
 | `index.html` | The main page: layout, design and drawings | No |
 | `office.html` | The optional virtual-office tour (linked in the footer) | No |
 | `*.jpg` | Your photos | Replace a file, keep the same name |
@@ -18,68 +18,68 @@ You only ever edit **one file: `content.js`**. Both pages read it.
 3. Make your change. Click **Commit changes**.
 4. Wait about one minute, then refresh your site.
 
+## Writing rules
+
+- **First person.** "I built…", "my thesis…". Never "Rafsan has…".
+- **One site for everyone.** Recruiters and professors read the same page, so nothing addresses one kind of visitor.
+- **No plans or dates you are aiming for.** Show what exists today. The only exception is the AI engineering path in Skills, which is labelled "Learning now" and "Next".
+- **State limits.** Every project says what it did not do.
+
 ## The most common updates
 
-### 1. Change the "Updated" date in the title block
-At the very top, under `person:`, change `updated: "November 2026"`.
-Do this every time you change something important.
+### 1. I finished a step of my AI engineering path
+Find `aiPath:` in the Skills part. When a step has a project behind it, move it from the path into your toolkit:
 
-### 2. I finished something that was "Building" or "Planned"
-Find the item (Ctrl+F) and change its status:
+1. Delete that line from `aiPath`, and set the next step's `status` to `"Learning now"`.
+2. Add a tile to the right group in `groups:`, with what you built:
 
 ```js
-{ name: "APIs: HTTP, JSON and requests", status: "Building", detail: "In progress now." },
-```
-becomes
-```js
-{ name: "APIs: HTTP, JSON and requests", status: "Built", detail: "Used in the weather-API project." },
+{ name: "FastAPI", icon: "fastapi", detail: "I turned my attrition model into a small web service." },
 ```
 
-Only three statuses exist: `"Built"`, `"Building"`, `"Planned"`. Spell them exactly.
-Change to `"Built"` only when there is a project a visitor can open.
-On the main page, the Skills board moves the item into the right column by itself.
+Logos you can use are listed in the comment above `skills:`.
 
-### 3. Add a new project
-Scroll to `projects:` near the bottom. Copy one whole entry (from `{` to `},`),
-paste it at the top of the list, and change the text. Give it a new `id`
-(lowercase, no spaces). `repo` is the repository name on your GitHub.
+### 2. Add a new project
+Scroll to `projects:` near the bottom. Copy one whole entry (from `{` to `},`), paste it at the top of the list and change the text. Give it a new `id` (lowercase, no spaces). `repo` is the repository name on your GitHub.
 
-- `art` picks the small drawing on the card: `"roc"`, `"pipeline"`, `"people"`, `"clusters"` or `"bars"`.
 - `stat` is the one line shown in the project list, for example `'1,470 records · Risk modelling'`.
-- `featured:true` puts the project in the three large cards at the top of Projects.
-  Keep it on exactly three projects. When your thesis-plus-ML project is finished,
-  make it featured.
+- `featured:true` puts the project in the three large cards at the top of Projects. Keep it on exactly three.
+- `video` adds it to the Videos section automatically.
+- A new project gets a simple drawing. Ask Claude to draw a custom one from its numbers.
 
-### 4. Your research project (the thesis, revisited with machine learning)
-When you start it: find `First project: the thesis, revisited` and change `"Planned"` to `"Building"`.
-When it has results: add it as a project (step 3), mark it `featured:true`, and change the status to `"Built"`.
+### 3. Add a new YouTube walkthrough
+Add `video: 'https://youtu.be/…'` and `videoTitle: '…'` to its project in `projects:`. To make it the video that plays first, set `featured:` in the `writing:` part to that project's `id`.
 
-### 5. Add a blog post
+### 4. Add a photo to "Beyond the desk"
+Upload the photo to the repository (keep the name short, no spaces, for example `gym-2027.jpg`). In `life:`, add a line to the right group:
+
+```js
+{ photo: "gym-2027.jpg", alt: "What the photo shows", caption: "One short sentence." },
+```
+
+### 5. Add an honour, certificate or degree
+- Honours: `honours:` inside `credentials:` (`timeline` is the row of medals).
+- Certificates: `certificates:`. Use `icon: "google"`, `"ibm"` or `"microsoft"`.
+- When you pass PL-300, move it from `preparing:` into `certificates:` with its verify link.
+
+### 6. Add a blog post
 Scroll to `posts:` and copy one entry to the top of the list.
 
-### 6. Add a certificate
-Find `title: "Professional certificates"` and copy one card.
-
-### 7. Change your headline, intro, "Open to" line or links
-They are at the very top, under `person:`.
-The headline is split into two lines at the `|` character.
-
-### 8. Change a skill level
-Find `title: "Toolkit"` and edit `level:` (`"Strong"`, `"Working"` or `"Introduced"`) and `detail:`.
+### 7. Change the paragraph under your name
+It is `about:` at the very top, under `person:`. Keep it to one paragraph.
 
 ## Links you can send
 
 - Whole site: https://ahmed-al-rafsan.github.io/
-- Straight to the research section (for professors): https://ahmed-al-rafsan.github.io/#research
-- Straight to the projects (for recruiters): https://ahmed-al-rafsan.github.io/#projects
+- Research section: https://ahmed-al-rafsan.github.io/#research
+- Engineering work: https://ahmed-al-rafsan.github.io/#engineering
+- Projects: https://ahmed-al-rafsan.github.io/#projects
+- Videos: https://ahmed-al-rafsan.github.io/#videos
 
 ## If the site goes blank after an edit
-A comma or quote mark is missing in `content.js`. On GitHub, open the file's
-**History**, and restore the previous version. Then try the edit again, slowly.
-Every item needs a comma after its closing `}` and every text needs both quote marks.
-If a sentence needs a quote mark inside it, use the curly ones ( ’ “ ” ).
+A comma or quote mark is missing in `content.js`. On GitHub, open the file's **History** and restore the previous version. Then try the edit again, slowly. Every item needs a comma after its closing `}` and every text needs both quote marks. If a sentence needs an apostrophe inside it, use the curly one ( ’ ).
 
 ## Three rules
-1. Status must be true today.
+1. Everything on the site must be true today.
 2. No address, ID numbers, date of birth, visa or migration details.
 3. Describe only work you did yourself.

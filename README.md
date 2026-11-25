@@ -1,6 +1,6 @@
 # ahmed-al-rafsan.github.io
 
-Ahmed Al Rafsan's website: aeronautical engineer and data analyst, building toward applied AI for aerospace.
+Ahmed Al Rafsan: aeronautical engineer and AI engineer, Melbourne.
 
 - `index.html` is the main page. `office.html` is the optional virtual-office tour.
 - `content.js` holds all the content. Both pages read it.

@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahmed Al Rafsan — Virtual office</title>
-<meta name="description" content="Walk through the virtual office of Ahmed Al Rafsan, a Melbourne data analyst working toward applied AI engineering. Separate rooms for aeronautical engineering, data projects, credentials, research and what he is building next.">
+<meta name="description" content="Walk through the virtual office of Ahmed Al Rafsan, an aeronautical engineer and AI engineer in Melbourne. Rooms for aeronautical engineering, research, projects, skills, credentials and the AI workshop.">
 <meta name="theme-color" content="#0C1730">
 <link rel="canonical" href="https://ahmed-al-rafsan.github.io/office.html">
 <meta property="og:title" content="Ahmed Al Rafsan — Virtual office">
-<meta property="og:description" content="Data analyst, working toward applied AI engineering. Walk through the office: engineering, data, projects, credentials and the roadmap.">
+<meta property="og:description" content="Aeronautical engineer and AI engineer. Walk through the office: engineering, research, projects, skills and credentials.">
 <meta property="og:image" content="https://ahmed-al-rafsan.github.io/portrait-wall.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ahmed Al Rafsan","jobTitle":"Data Analyst, working toward applied AI engineering","url":"https://ahmed-al-rafsan.github.io/","address":{"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"},"sameAs":["https://github.com/Ahmed-Al-Rafsan","https://www.linkedin.com/in/ahmed-al-rafsan-","https://www.youtube.com/@AhmedAlRafsan"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ahmed Al Rafsan","jobTitle":"Aeronautical engineer and AI engineer","url":"https://ahmed-al-rafsan.github.io/","address":{"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"},"sameAs":["https://github.com/Ahmed-Al-Rafsan","https://www.linkedin.com/in/ahmed-al-rafsan-","https://www.youtube.com/@AhmedAlRafsan"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230F1B33'/%3E%3Crect x='3' y='3' width='58' height='58' rx='13' fill='none' stroke='%23D9BC82' stroke-opacity='.55' stroke-width='1.5'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23D9BC82'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -370,7 +370,7 @@ body.fast .note,body.fast .roomnav{display:none}
       <rect x="470" y="96" width="660" height="544" rx="6" fill="none" stroke="url(#brassg)" stroke-width="5"/>
       <text x="800" y="210" text-anchor="middle" font-family="Marcellus,Georgia,serif" font-size="86" letter-spacing="20" fill="url(#brassg)">RAFSAN</text>
       <rect x="640" y="236" width="320" height="2" fill="#C9A45C" opacity=".7"/>
-      <text x="800" y="272" text-anchor="middle" font-family="Instrument Sans,Segoe UI,sans-serif" font-size="24" fill="#E6CE96" opacity=".9">Data and AI. A virtual office.</text>
+      <text x="800" y="272" text-anchor="middle" font-family="Instrument Sans,Segoe UI,sans-serif" font-size="24" fill="#E6CE96" opacity=".9">Aeronautical engineering and AI. A virtual office.</text>
       <g opacity=".95">
         <rect x="1250" y="250" width="210" height="390" rx="4" fill="#0E1C3D" stroke="url(#brassg)" stroke-width="7"/>
         <path d="M1270 640V300L1440 270V640Z" fill="#20386E" opacity=".7"/>
@@ -475,7 +475,7 @@ body.fast .note,body.fast .roomnav{display:none}
 <noscript>
   <div style="max-width:720px;margin:40px auto;padding:0 20px;font-family:Georgia,serif">
     <h1>Ahmed Al Rafsan</h1>
-    <p>Data analyst, working toward applied AI engineering. Melbourne, Australia.</p>
+    <p>Aeronautical engineer and AI engineer. Melbourne, Australia.</p>
     <p>This site needs JavaScript to open the virtual office. You can still reach me at ahmed.rafsan108@gmail.com, on <a href="https://github.com/Ahmed-Al-Rafsan">GitHub</a> and on <a href="https://www.linkedin.com/in/ahmed-al-rafsan-">LinkedIn</a>, or open the <a href="index.html">main page</a>.</p>
   </div>
 </noscript>
@@ -491,7 +491,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const rooms=S.rooms, byId=Object.fromEntries(rooms.map(r=>[r.id,r]));
 const WING={present:{name:'Present wing',tag:'Present wing: work that exists today',blurb:'Finished work. Everything in these rooms exists today and can be checked.'},
-            roadmap:{name:'Roadmap wing',tag:'Roadmap wing: building and planned',blurb:'Under construction. These rooms show what is being built and what is planned, and label each item.'}};
+            roadmap:{name:'Workshop wing',tag:'Workshop wing: what I am learning now',blurb:'Under construction on purpose. This room shows what I am learning now and what comes next, and labels each item.'}};
 const avatar='<div class="avatar"><svg viewBox="70 60 160 160" aria-hidden="true"><use href="#mira" width="300" height="340"/></svg></div>';
 const chip=s=>{const k=String(s||'Built').toLowerCase();return '<span class="chip '+esc(k)+'">'+esc(s||'Built')+'</span>'};
 const ext=u=>/^https?:/.test(u)?' target="_blank" rel="noopener noreferrer"':'';
@@ -542,7 +542,7 @@ function render(first){
     document.title=P.name+' — Fast view';return;
   }
   delete v.dataset.fast;
-  if(id==='directory'){v.innerHTML='<header class="roomhead"><div class="tagrow"><span class="doorplate">Directory</span></div><h1>Floor directory</h1><p class="sum">Two wings. The Present wing is finished work. The Roadmap wing is under construction.</p></header>'+directory()+foot;document.title='Floor directory — '+P.name}
+  if(id==='directory'){v.innerHTML='<header class="roomhead"><div class="tagrow"><span class="doorplate">Directory</span></div><h1>Floor directory</h1><p class="sum">Two wings. The Present wing is finished work. The Workshop wing shows what I am learning now.</p></header>'+directory()+foot;document.title='Floor directory — '+P.name}
   else{const r=byId[id]||(id.startsWith('p-')?byId.projects:byId.office);v.innerHTML=roomHTML(r,false)+foot;document.title=r.name+' — '+P.name;
     if(id.startsWith('p-')){const d=document.getElementById(id);if(d){d.open=true;d.scrollIntoView({block:'center'});return}}}
   if(!first){scrollTo(0,0);v.focus({preventScroll:true})}
@@ -572,7 +572,7 @@ function buildCorridor(){
   const wallHTML=(r,first,side)=>{
     if(!r)return first?'<div class="wingname">'+(side==='L'?'Present wing':'This way')+'<small>'+(side==='L'?'Finished work':'to Rafsan’s office')+'</small></div>':'<div class="sconce" style="left:340px"></div>';
     const plan=r.wing==='roadmap';
-    return '<div class="plaque">'+esc(r.name)+'<small>'+(plan?'Roadmap wing, under construction':'Present wing')+'</small></div><div class="door'+(plan?' plan':'')+'"><i></i></div><div class="sconce" style="left:120px"></div><div class="sconce" style="right:120px"></div>';
+    return '<div class="plaque">'+esc(r.name)+'<small>'+(plan?'Workshop wing, under construction':'Present wing')+'</small></div><div class="door'+(plan?' plan':'')+'"><i></i></div><div class="sconce" style="left:120px"></div><div class="sconce" style="right:120px"></div>';
   };
   let h='';
   bays.forEach((b,i)=>{const z=-(i*BAY+BAY/2);
