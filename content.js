@@ -233,7 +233,7 @@ window.SITE = {
       { icon: "store", when: "May 2025 to now", where: "Chemist Warehouse, Melbourne", title: "Pharmacy assistant, with an Excel tracker I built",
         text: "I built an Excel task-tracking prototype for a six-person store team: daily task allocation, status dropdowns, conditional formatting and sign-off checks. Daily and monthly completion summaries run on COUNTIFS, SUMIFS and INDEX/MATCH, with a date-selectable management dashboard and a quick-start guide for staff.",
         stats: ["6-person team", "Daily and monthly summaries"] },
-      { icon: "team", when: "Master’s capstone", where: "Industry capstone, AIH", title: "Team lead and data analyst",
+      { icon: "team", when: "June 2026", where: "Industry capstone, AIH", title: "Team lead and data analyst",
         text: "I led six people through a live client engagement: eight state and territory files merged and cleaned, a transparent priority score, K-Means segmentation and a Random Forest check, delivered as a CRM-ready list and a Power BI dashboard.",
         stats: ["9,855 schools", "Top 200 to CRM"] },
       { icon: "people", when: "About two and a half years", where: "Kazi Farms Group, Bangladesh", title: "HR Executive, organisational development",
